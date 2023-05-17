@@ -27,3 +27,8 @@ while True:
                 # second method
                 row = f"{index + 1}-{item}"
                 print(row) # --> second method
+        case 'edit':
+            number = int(input("Number of the todo to edit: "))
+            number -= 1
+            new_todo = input("Enter new todo: ")
+            todos[number] = new_todo
