@@ -37,3 +37,5 @@ while True:
             todos.pop(number - 1)
         case 'exit':
             break
+        case _:
+            print("Hey, you enter an unknown command. Please select one action!")
