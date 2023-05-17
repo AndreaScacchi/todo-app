@@ -35,3 +35,5 @@ while True:
         case 'complete' | 'delete':
             number = int(input("Number of the todo to complete: "))
             todos.pop(number - 1)
+        case 'exit':
+            break
