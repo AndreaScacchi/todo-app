@@ -15,3 +15,15 @@ while True:
             file = open('todos.txt', 'w') # to write the file todos.txt
             file.writelines(todos)
             file.close()
+        case 'show' | 'display':
+            file = open('todos.txt', 'r')
+            todos = file.readlines()
+            file.close()
+
+            for index, item in enumerate(todos):
+                item = item.title()
+                # print(index, '-', item) --> first method
+
+                # second method
+                row = f"{index + 1}-{item}"
+                print(row) # --> second method
