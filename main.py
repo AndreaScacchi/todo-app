@@ -39,3 +39,5 @@ while True:
             break
         case _:
             print("Hey, you enter an unknown command. Please select one action!")
+
+print("See you!🖐️")
