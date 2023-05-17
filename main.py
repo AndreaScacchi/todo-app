@@ -32,3 +32,6 @@ while True:
             number -= 1
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo
+        case 'complete' | 'delete':
+            number = int(input("Number of the todo to complete: "))
+            todos.pop(number - 1)
