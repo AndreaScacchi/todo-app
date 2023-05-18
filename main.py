@@ -52,7 +52,7 @@ while True:
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
-            with open('todo.txt', 'w') as file:
+            with open('todos.txt', 'w') as file:
                 file.writelines(todos)
 
         case 'complete' | 'delete':
