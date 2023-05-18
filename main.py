@@ -61,6 +61,7 @@ while True:
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
+            # todo index you want to remove store inside the following variable
             todo_index = number - 1
             todo_to_remove = todos[todo_index].strip('\n')
             todos.pop(number - 1)
