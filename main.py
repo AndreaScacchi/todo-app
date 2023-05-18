@@ -21,8 +21,21 @@ while True:
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
+            # clean up the list, remove the space between todos
+            # new_todos = []
+            # for item in todos:
+            #    new_item = item.strip('\n')
+            #    new_todos.append(new_item)
+
+            # to clean up the list you can also use list comprehensions
+            # new_todos = [item.strip('\n') for item in todos]
+
             for index, item in enumerate(todos):
                 item = item.title()
+
+                # to clean up the list you can also use the follow method inside the loop
+                item = item.strip('\n')
+
                 # print(index, '-', item) --> first method
 
                 # second method
