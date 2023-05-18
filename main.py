@@ -7,15 +7,14 @@ while True:
         case 'add':
             todo = input("Enter a todo: ") + "\n"
 
-            file = open('todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            # open the file
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
 
             todos.append(todo)
 
-            file = open('todos.txt', 'w') # to write the file todos.txt
-            file.writelines(todos)
-            file.close()
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
 
         case 'show' | 'display':
             file = open('todos.txt', 'r')
@@ -42,7 +41,7 @@ while True:
 
         case 'exit':
             break
-        
+
         case _:
             print("Hey, you enter an unknown command. Please select one action!")
 
