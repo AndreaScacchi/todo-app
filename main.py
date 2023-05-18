@@ -3,6 +3,7 @@ while True:
     user_action = user_action.strip()
 
     match user_action: # check user action
+
         case 'add':
             todo = input("Enter a todo: ") + "\n"
 
@@ -15,6 +16,7 @@ while True:
             file = open('todos.txt', 'w') # to write the file todos.txt
             file.writelines(todos)
             file.close()
+
         case 'show' | 'display':
             file = open('todos.txt', 'r')
             todos = file.readlines()
@@ -27,16 +29,20 @@ while True:
                 # second method
                 row = f"{index + 1}-{item}"
                 print(row) # --> second method
+
         case 'edit':
             number = int(input("Number of the todo to edit: "))
             number -= 1
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo
+
         case 'complete' | 'delete':
             number = int(input("Number of the todo to complete: "))
             todos.pop(number - 1)
+
         case 'exit':
             break
+        
         case _:
             print("Hey, you enter an unknown command. Please select one action!")
 
