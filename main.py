@@ -2,7 +2,7 @@ while True:
     user_action = input("Type add, show(or display), edit, complete(or delete), or exit: ")
     user_action = user_action.strip()
 
-    match user_action:
+    match user_action: # check user action
         case 'add':
             todo = input("Enter a todo: ") + "\n"
 
