@@ -46,7 +46,7 @@ while True:
             number = int(input("Number of the todo to edit: "))
             number -= 1
 
-            with open('todo.txt', 'r') as file:
+            with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
             new_todo = input("Enter new todo: ")
