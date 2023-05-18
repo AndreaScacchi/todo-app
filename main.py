@@ -18,9 +18,8 @@ while True:
                 file.writelines(todos)
 
         case 'show' | 'display':
-            file = open('todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
 
             for index, item in enumerate(todos):
                 item = item.title()
