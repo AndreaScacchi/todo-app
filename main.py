@@ -12,6 +12,7 @@ while True:
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
+            # append the todos to the file todos.txt
             todos.append(todo)
 
             # open the file
@@ -19,6 +20,7 @@ while True:
                 file.writelines(todos)
 
         case 'show' | 'display':
+            # open the file
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
@@ -31,6 +33,7 @@ while True:
             # to clean up the list you can also use list comprehensions
             # new_todos = [item.strip('\n') for item in todos]
 
+            # loop through the todos list and take the index and the todo(item)
             for index, item in enumerate(todos):
                 item = item.title()
 
@@ -44,21 +47,26 @@ while True:
                 print(row) # --> second method
 
         case 'edit':
+            # ask the user to enter the number of the todo you want to edit
             number = int(input("Number of the todo to edit: "))
             number -= 1
 
+            # open the file
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
-
+            # ask the user to enter a new todo
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
+            # open the file
             with open('todos.txt', 'w') as file:
                 file.writelines(todos)
 
         case 'complete' | 'delete':
+            # ask the user to enter the number of the todo you want to delete/complete
             number = int(input("Number of the todo to complete: "))
-
+            
+            # open the file
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
@@ -67,14 +75,16 @@ while True:
             todo_to_remove = todos[todo_index].strip('\n')
             todos.pop(number - 1)
 
+            # open the file
             with open('todos.txt', 'w') as file:
                 file.writelines(todos)
 
+            # alert the user that the todo is removed 
             message = f"Todo '{todo_to_remove}' was removed from the list!"
             print(message)
 
         case 'exit':
-            break
+            break # break the loop
 
         case _:
             print("Hey, you enter an unknown command. Please select one action!")
