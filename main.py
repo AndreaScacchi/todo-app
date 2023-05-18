@@ -13,6 +13,7 @@ while True:
 
             todos.append(todo)
 
+            # open the file
             with open('todos.txt', 'w') as file:
                 file.writelines(todos)
 
